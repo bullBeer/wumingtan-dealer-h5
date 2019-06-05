@@ -316,8 +316,8 @@ table{
 .home-container{
   .avatar{
     display: inline-block;
-    width: 75px;
-    height: 75px;
+    width: vw(75);
+    height: vw(75);
     border-radius: 50%;
     vertical-align: top;
     overflow: hidden;
