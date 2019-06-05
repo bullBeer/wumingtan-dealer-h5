@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta content="telephone=no" name="format-detection" />
+  <title>推广</title>
+  <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+  <main class="wrapper">
+    <div class="promotion-container">
+      <ul class="tab">
+        <li class="tab-item current">每日</li>
+        <li class="tab-item">拉人</li>
+      </ul>
+      <div class="tab-content">
+        <article class="article">
+          <h6 class="title">娃娃机</h6>
+          <div class="content">
+            <p>
+                又称选物贩卖，中国台湾俗称夹娃娃机，中国香港称夹公仔机，在国内也叫抓娃娃机，为一种源于日本的电子游戏。日语原名UFO CATCHER。娃娃机属于礼品贩卖机，是大型游戏机里面较简单的一种。                      
+            </p>
+          </div>
+        </article>
+        <ul class="pic-list">
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+          <li class="item">
+            <img src="images/list_pic.jpg" alt="">
+          </li>
+        </ul>
+        <div class="tc">
+          <button class="cm-btn">复制文字</button>
+        </div>
+      </div>
+      <div class="tab-content" style="display: none;">
+        <div class="merge-pic">
+            <img src="images/list_pic.jpg" alt="">
+        </div>
+        <div class="tc">
+          <button class="cm-btn">合成</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    // tab demo
+    var tabItems = document.querySelectorAll('.tab-item');
+    var tabContents = document.querySelectorAll('.tab-content');
+    for (var i = 0, len = tabItems.length; i < len; i++) {
+      (function(index){
+        tabItems[index].addEventListener('click', function() {
+          tabItems.forEach(function(item, index) {
+            item.className="tab-item";
+            tabContents[index].style.display = 'none';
+          });
+          this.className = "tab-item current";
+          tabContents[index].style.display = 'block';
+        });
+      })(i)
+    }
+  </script>
+</body>
+</html>
