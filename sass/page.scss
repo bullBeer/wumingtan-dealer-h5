@@ -44,6 +44,9 @@ table{
   border-collapse: collapse;
   border-spacing: 0;
 }
+::-webkit-input-placeholder{
+  color: #cecece;
+}
 /*reset end*/
 
 
@@ -55,6 +58,12 @@ table{
 }
 .tl{
   text-align: left;
+}
+.red{
+  color: #ff4444;
+}
+.blue{
+  color: #008ED0;
 }
 .toast{
   background-color: rgba(0,0,0,0.7);
@@ -130,7 +139,7 @@ table{
   }
 }
 
-.info-panel{
+.info-panel,.panel{
   font-size: vw(13);
   .panel-hd{
     text-align: left;
@@ -166,6 +175,89 @@ table{
         .bg{
           background-color: #ccc;
         }
+      }
+    }
+  }
+}
+
+.load-more{
+  padding: vw(10);
+  text-align: center;
+  color: #999;
+}
+
+.modal{
+  display: none;
+  .mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 25;
+    background-color: rgba(0,0,0,0.7);
+  }
+  .modal-container{
+    z-index: 26;
+    background-color: #fff;
+    width: vw(300);
+    height: auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border-radius: vw(6);
+  }
+  .modal-hd{
+    font-size: vw(15);
+    padding: vw(10);
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .modal-bd{
+    font-size: vw(14);
+    padding: vw(10);
+    line-height: 1.5;
+    .content{
+      padding: vw(7);
+    }
+  }
+  .modal-ft{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #dfdfdf;
+    .md-btn{
+      font-size: vw(15);
+      line-height: vw(40);
+      flex: 1;
+      &:nth-child(2){
+        border-left: 1px solid #dfdfdf;
+        @extend .blue;
+      }
+    }
+  }
+}
+
+.form-group{
+  .input-item{
+    height: vw(40);
+    border-bottom: vw(2) solid #dfdfdf;
+    .title{
+      float: left;
+      font-size: vw(14);
+      min-width: 4em;
+      line-height: vw(40);
+    }
+    .input-box{
+      overflow: hidden;
+      input{
+        display: block;
+        width: 100%;
+        height: vw(40);
+        font-size: vw(14);
+        border: none;
+        background-color: transparent;
       }
     }
   }
@@ -323,5 +415,129 @@ table{
       width: vw(134);
       height: vw(134);
     }
+  }
+}
+
+// 提现
+.withdraw-container{
+  padding: vw(10);
+  .withdraw-list{
+    padding: vw(15) vw(5) 0;
+    .item{
+      padding: vw(10) vw(12);
+      background-color: #C9C9C9;
+      height: vw(66);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #000;
+      margin-bottom: vw(10);
+      font-size: vw(13);
+      &.success{
+        background-color: #EEEEEF;
+        .status{
+          color: #91BFDF;
+        }
+      }
+      .status{
+        color: #450000;
+        font-size: vw(17);
+      }
+      .amount{
+        font-weight: bold;
+        font-size: vw(16);
+        padding-top: vw(5);
+      }
+    }
+  }
+  .panel{
+    padding: vw(15) vw(5) 0;
+  }
+  .withdraw-form{
+    padding: vw(13);
+    margin-top: vw(2);
+    background-color: #EEEEEF;
+    .input-item{
+      position: relative;
+      height: vw(40);
+      border-bottom: vw(2) solid #dfdfdf;
+      margin-bottom: vw(10);
+      margin-top: vw(10);
+      padding-left: vw(30);
+      &:before{
+        content: "￥";
+        font-size: vw(26);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: vw(40);
+        width: vw(30);
+      }
+      input{
+        border: none;
+        display: block;
+        width: 100%;
+        height: vw(40);
+        background-color: transparent;
+        font-size: vw(20);
+      }
+    }
+    .submit-btn{
+      display: block;
+      width: 100%;
+      margin-top: vw(10);
+    }
+  }
+  .add-card-item{
+    a{
+      color: #999;
+      font-size: vw(17);
+      display: block;
+      padding: vw(10) vw(5);
+    }
+  }
+}
+
+.card-list{
+  padding: vw(10) vw(5);
+  .item{
+    background-color: #EEEEEF;
+    position: relative;
+    color: #000;
+    padding: vw(10) vw(15);
+    line-height: 1.4;
+    .name{
+      font-size: vw(18);
+    }
+    .type{
+      font-size: vw(12);
+    }
+    .info{
+      font-size: vw(16);
+      padding-top: vw(7);
+    }
+    .del{
+      color: #450000;
+      position: absolute;
+      right: vw(15);
+      bottom: vw(15);
+      font-size: vw(14);
+    }
+  }
+}
+
+// 绑定银行卡
+.addCard-container{
+  padding: vw(10);
+  .addCard-form{
+    padding: vw(13);
+    margin-top: vw(2);
+    background-color: #EEEEEF;
+  }
+  .submit-btn{
+    display: block;
+    width: 100%;
+    margin: vw(20) 0 vw(5);
   }
 }

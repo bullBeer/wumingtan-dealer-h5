@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta content="telephone=no" name="format-detection" />
+  <title>提现</title>
+  <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+  <main class="wrapper">
+    <div class="withdraw-container">
+      <ul class="tab">
+        <li class="tab-item current">提现</li>
+        <li class="tab-item">历史</li>
+      </ul>
+      <div class="tab-content">
+        <dl class="panel">
+          <dt class="panel-hd">
+            <span class="title">账户余额</span>
+            <span class="red">￥1000.00</span>
+          </dt>
+          <dd class="panel-bd">
+            <form action="#" class="withdraw-form">
+              <p>提现金额</p>
+              <div class="input-item">
+                <input type="text">
+              </div>
+              <span class="blue">全部提现</span>
+              <button class="cm-btn submit-btn">提现</button>
+            </form>
+          </dd>
+        </dl>
+        <div class="add-card-item">
+          <a href="#">+ 添加银行卡</a>
+        </div>
+        <ul class="card-list">
+          <li class="item">
+            <p class="name">招商银行</p>
+            <p class="type">储蓄卡</p>
+            <div class="info">
+              <p>户名</p>
+              <p>**** **** **** 888</p>
+            </div>
+            <span class="del">删除</span>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content" style="display: none;">
+        <ul class="withdraw-list">
+          <li class="item success">
+            <div class="info">
+              <p>2019-06-03 18:53:31</p>
+              <p class="amount">￥ 300.00</p>
+            </div>
+            <div class="status">提现成功</div>
+          </li>
+          <li class="item">
+            <div class="info">
+              <p>2019-06-03 18:53:31</p>
+              <p class="amount">￥ 300.00</p>
+            </div>
+            <div class="status">等待审核</div>
+          </li>
+          <li class="item">
+            <div class="info">
+              <p>2019-06-03 18:53:31</p>
+              <p class="amount">￥ 300.00</p>
+            </div>
+            <div class="status">等待审核</div>
+          </li>
+          <li class="item">
+            <div class="info">
+              <p>2019-06-03 18:53:31</p>
+              <p class="amount">￥ 300.00</p>
+            </div>
+            <div class="status">等待审核</div>
+          </li>
+          <li class="item">
+            <div class="info">
+              <p>2019-06-03 18:53:31</p>
+              <p class="amount">￥ 300.00</p>
+            </div>
+            <div class="status">等待审核</div>
+          </li>
+        </ul>
+        <div class="load-more">点击加载更多</div>
+      </div>
+    </div>
+
+
+
+    <!--弹窗-->
+    <div class="modal" style="display: block;">
+      <div class="mask"></div>
+      <div class="modal-container">
+        <div class="modal-hd">
+          <span class="title">提示</span>
+        </div>
+        <div class="modal-bd">
+          <div class="content">
+            <p>
+              是否删除该银行卡
+            </p>
+          </div>
+        </div>
+        <div class="modal-ft">
+          <span class="md-btn cancel">取消</span>
+          <span class="md-btn confirm">确定</span>
+        </div>
+      </div>
+    </div>
+    <!--弹窗 end-->
+
+
+
+  </main>
+  <script>
+    // tab demo
+    var tabItems = document.querySelectorAll('.tab-item');
+    var tabContents = document.querySelectorAll('.tab-content');
+    for (var i = 0, len = tabItems.length; i < len; i++) {
+      (function(index){
+        tabItems[index].addEventListener('click', function() {
+          tabItems.forEach(function(item, index) {
+            item.className="tab-item";
+            tabContents[index].style.display = 'none';
+          });
+          this.className = "tab-item current";
+          tabContents[index].style.display = 'block';
+        });
+      })(i)
+    }
+  </script>
+</body>
+</html>
